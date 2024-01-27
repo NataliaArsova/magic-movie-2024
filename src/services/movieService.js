@@ -1,10 +1,11 @@
 const movies = [
   {
-    title: "Jungle",
+    _id: 1,
+    title: "Jungle Cruise",
     genre: "adventure",
     director: "Jack",
     date: "2022",
-    imageUrl: "/image/jungle.jpeg",
+    imageUrl: "/img/jungle-cruise.jpeg",
     rating: "6.7",
     description: "great movie",
   },
@@ -14,5 +15,6 @@ exports.getAll = () => {
 };
 
 exports.create = (movieData) => {
+  movieData._id = movies;
   movies.push(movieData);
 };
