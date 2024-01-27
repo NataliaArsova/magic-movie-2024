@@ -4,7 +4,7 @@ const movies = [
     title: "Jungle Cruise",
     genre: "adventure",
     director: "Jack",
-    date: "2022",
+    year: "2022",
     imageUrl: "/img/jungle-cruise.jpeg",
     rating: "5",
     description: "great movie",
@@ -12,6 +12,28 @@ const movies = [
 ];
 exports.getAll = () => {
   return movies.slice();
+};
+
+exports.search = (title, genre, year) => {
+  let result = movies.slice();
+
+  if (title) {
+    result = result.filter((movie) =>
+      movie.title.toLowerCase().includes(title.toLowerCase())
+    );
+  }
+
+  if (genre) {
+    result = result.filter(
+      (movie) => movie.genre.toLowerCase() === genre.toLowerCase()
+    );
+  }
+
+  if (year) {
+    result = result.filter((movie) => movie.year === year);
+  }
+
+  return result;
 };
 
 exports.getOne = (movieId) => {
