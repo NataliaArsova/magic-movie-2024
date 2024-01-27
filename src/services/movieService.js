@@ -6,7 +6,7 @@ const movies = [
     director: "Jack",
     date: "2022",
     imageUrl: "/img/jungle-cruise.jpeg",
-    rating: "6.7",
+    rating: "5",
     description: "great movie",
   },
 ];
