@@ -9,8 +9,10 @@ const movies = [
     description: "great movie",
   },
 ];
+exports.getAll = () => {
+  return movies.slice();
+};
 
 exports.create = (movieData) => {
-  console.log(movieData);
   movies.push(movieData);
 };
