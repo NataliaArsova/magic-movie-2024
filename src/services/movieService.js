@@ -27,3 +27,11 @@ exports.search = async (title, genre, year) => {
 exports.getOne = (movieId) => Movie.findById(movieId);
 
 exports.create = (movieData) => Movie.create(movieData);
+
+exports.attach = async (movieId, castId) => {
+  const movie = await this.getOne(movieId);
+
+  movie.casts.push(castId);
+
+  return movie.save();
+};

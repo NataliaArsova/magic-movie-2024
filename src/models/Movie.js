@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Cast = require("./Cast");
 
 const movieSchema = new mongoose.Schema({
   title: {
@@ -36,6 +37,12 @@ const movieSchema = new mongoose.Schema({
     required: true,
     match: /^https?:\/\//,
   },
+  casts: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Cast",
+    },
+  ],
 });
 
 const Movie = mongoose.model("Movie", movieSchema);
