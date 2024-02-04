@@ -1,5 +1,5 @@
-const Movie = require("../models/Movie");
-const Cast = require("../models/Cast");
+const Movie = require('../models/Movie');
+const Cast = require('../models/Cast');
 
 exports.getAll = () => Movie.find();
 
@@ -25,7 +25,7 @@ exports.search = async (title, genre, year) => {
   return result;
 };
 
-exports.getOne = (movieId) => Movie.findById(movieId).populate("casts");
+exports.getOne = (movieId) => Movie.findById(movieId).populate('casts');
 
 exports.create = (movieData) => Movie.create(movieData);
 
